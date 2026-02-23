@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dediche per la mamma</title>
     <style>
-      :root{--bg:#fff7fb;--card:#fff;--accent:#ff6b81;--muted:#6b4a4a}
+      :root{--bg:#fff7fb;--card:#fff;--accent:#ff6b81;--muted:#5b3a3f}
       *{box-sizing:border-box}
       body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;color:var(--muted);background:linear-gradient(180deg,#fff7fb 0%, #fff0f4 100%);padding:2rem}
-      .wrap{max-width:900px;margin:0 auto}
+      .wrap{max-width:960px;margin:0 auto}
       header{display:flex;align-items:center;gap:1rem}
       h1{margin:0;font-size:2rem;color:var(--accent)}
       p.lead{margin:0;color:#8b5a62}
-      .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.25rem}
-      .card{background:var(--card);border-radius:12px;padding:1rem;box-shadow:0 6px 18px rgba(122,55,64,0.08);position:relative;overflow:hidden}
+      .controls{margin-left:auto}
+      button{background:var(--accent);color:white;border:none;padding:0.5rem 0.9rem;border-radius:8px;cursor:pointer}
+      .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1.25rem}
+      .card{background:var(--card);border-radius:12px;padding:1rem 1rem 1.25rem;box-shadow:0 6px 20px rgba(122,55,64,0.08);position:relative}
       .card h3{margin:0 0 .5rem;color:#7a3740}
       .card p{margin:0 0 .75rem;line-height:1.5}
-      .heart{position:absolute;right:12px;top:12px;width:48px;height:48px;opacity:0.9}
+      .heart-ico{position:absolute;right:12px;top:12px;width:42px;height:42px;opacity:0.95}
       .small{font-size:0.9rem;color:#a26b6f}
       footer{margin-top:1.5rem;text-align:center;color:#9b6b73}
-      .emoji{font-size:1.25rem;margin-left:6px}
+      @media(print){body{padding:0} header .controls{display:none}} 
     </style>
   </head>
   <body>
@@ -34,42 +36,45 @@
         </svg>
         <div>
           <h1>Dediche per la mamma</h1>
-          <p class="lead">Parole sincere, disegnini e cuori per celebrare chi ci ama.</p>
+          <p class="lead">Parole sincere e piccoli disegni per dire grazie alla mamma.</p>
+        </div>
+        <div class="controls">
+          <button onclick="window.print()">Stampa</button>
         </div>
       </header>
 
       <main class="grid" aria-live="polite">
-        <article class="card">
-          <svg class="heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ff6b81"/></svg>
+        <article class="card" role="article">
+          <svg class="heart-ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ff6b81"/></svg>
           <h3>Per la mamma dolce</h3>
-          <p>Grazie per i tuoi abbracci che mi scaldano come il sole. Sei il mio porto sicuro ogni giorno.</p>
-          <div class="small">— Con tanto amore <span class="emoji">💖</span></div>
+          <p>Grazie per i tuoi abbracci che scaldano il cuore e per ogni piccolo gesto che rende speciale la mia giornata.</p>
+          <div class="small">— Con tanto amore 💖</div>
         </article>
 
-        <article class="card">
-          <svg class="heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ffb199"/></svg>
+        <article class="card" role="article">
+          <svg class="heart-ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ffb199"/></svg>
           <h3>Per la mamma forte</h3>
-          <p>Sei la mia ispirazione: con te ho imparato a ridere, a rialzarmi e a credere nei sogni.</p>
-          <div class="small">— Sempre tuo/a <span class="emoji">🌷</span></div>
+          <p>Sei la mia roccia: grazie per la forza che mi trasmetti e per essere sempre al mio fianco.</p>
+          <div class="small">— Sempre tuo/a 🌷</div>
         </article>
 
-        <article class="card">
-          <svg class="heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ff9aa2"/></svg>
+        <article class="card" role="article">
+          <svg class="heart-ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ff9aa2"/></svg>
           <h3>Per la mamma amica</h3>
-          <p>Grazie per i consigli, le risate e le confidenze. Sei il mio primo e più caro sostegno.</p>
-          <div class="small">— Con un bacio grande <span class="emoji">🥰</span></div>
+          <p>Grazie per le chiacchierate, le risate e i consigli: sei la mia migliore amica.</p>
+          <div class="small">— Con un bacio grande 🥰</div>
         </article>
 
-        <article class="card">
-          <svg class="heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ffd3b6"/></svg>
+        <article class="card" role="article">
+          <svg class="heart-ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ffd3b6"/></svg>
           <h3>Per la mamma che ascolta</h3>
-          <p>Le tue parole hanno sempre un posto speciale nel mio cuore. Grazie per essere la mia confidente.</p>
-          <div class="small">— Ti voglio bene <span class="emoji">💐</span></div>
+          <p>Le tue parole hanno sempre un posto speciale nel mio cuore. Grazie per ascoltarmi e capirmi.</p>
+          <div class="small">— Ti voglio bene 💐</div>
         </article>
       </main>
 
       <footer>
-        Se vuoi aggiungere altre dediche, dimmi cosa scrivere e le aggiungo qui.
+        Se vuoi aggiungere altre dediche, dimmi cosa scrivere e le inserirò qui.
       </footer>
     </div>
   </body>
