@@ -1,99 +1,76 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Una persona speciale</title>
-  <style>
-    :root{
-      --bg-1: #fff6f9;
-      --bg-2: #fff0f4;
-      --accent: #ff6b81;
-      --accent-2: #ffb199;
-      --card-bg: rgba(255,255,255,0.9);
-      --text: #333;
-    }
-    html,body{height:100%;margin:0;font-family: 'Segoe UI', Roboto, Arial, sans-serif;color:var(--text)}
-    body{
-      background: radial-gradient(circle at 10% 20%, var(--bg-2), var(--bg-1));
-      display:flex;align-items:center;justify-content:center;padding:3rem;
-    }
-    .container{max-width:900px;width:100%;}
-    .hero{
-      background: linear-gradient(135deg,var(--accent) 0%, #ffd2e0 50%, var(--accent-2) 100%);
-      border-radius:18px;padding:2rem;color:white;box-shadow:0 10px 30px rgba(0,0,0,0.12);
-      position:relative;overflow:hidden;
-    }
-    h1{margin:0 0 .25rem;font-size:2.25rem;letter-spacing:0.5px}
-    h2{margin:0 0 1rem;font-weight:400;opacity:0.95}
-    .card{background:var(--card-bg);padding:1.5rem;border-radius:12px;margin-top:1rem;color:var(--text)}
-    p{line-height:1.6;margin:0}
-    .row{display:flex;gap:1.25rem;align-items:flex-start}
-    .illustration{flex:0 0 300px}
-    .hearts{position:absolute;right:-40px;top:-30px;opacity:0.85}
-    .heart{animation:float 4s ease-in-out infinite}
-    .heart:nth-child(2){animation-delay:0.8s;transform:scale(0.85)}
-    .heart:nth-child(3){animation-delay:1.6s;transform:scale(0.6)}
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)}}
-    .signature{margin-top:1rem;text-align:right;font-weight:600;color:#7a3740}
-    @media(max-width:700px){.row{flex-direction:column}.illustration{order:-1;width:100%}}
-  </style>
-</head>
-<body>
-  <div class="container">
-    <section class="hero">
-      <div class="row">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dediche per la mamma</title>
+    <style>
+      :root{--bg:#fff7fb;--card:#fff;--accent:#ff6b81;--muted:#6b4a4a}
+      *{box-sizing:border-box}
+      body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;color:var(--muted);background:linear-gradient(180deg,#fff7fb 0%, #fff0f4 100%);padding:2rem}
+      .wrap{max-width:900px;margin:0 auto}
+      header{display:flex;align-items:center;gap:1rem}
+      h1{margin:0;font-size:2rem;color:var(--accent)}
+      p.lead{margin:0;color:#8b5a62}
+      .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.25rem}
+      .card{background:var(--card);border-radius:12px;padding:1rem;box-shadow:0 6px 18px rgba(122,55,64,0.08);position:relative;overflow:hidden}
+      .card h3{margin:0 0 .5rem;color:#7a3740}
+      .card p{margin:0 0 .75rem;line-height:1.5}
+      .heart{position:absolute;right:12px;top:12px;width:48px;height:48px;opacity:0.9}
+      .small{font-size:0.9rem;color:#a26b6f}
+      footer{margin-top:1.5rem;text-align:center;color:#9b6b73}
+      .emoji{font-size:1.25rem;margin-left:6px}
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#ff9aa2"/><stop offset="1" stop-color="#ffb7b2"/></linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="12" fill="url(#lg)"/>
+          <path d="M20 36c-6-6 0-14 6-8 6-6 12 2 6 8-6 6-12 6-12 6s-6 0-6-6z" fill="#fff" opacity="0.92"/>
+        </svg>
         <div>
-          <h1>Una persona speciale</h1>
-          <h2>Per la mia mamma, con tutto il mio amore</h2>
-          <div class="card">
-            <div style="display:flex;gap:1rem;align-items:flex-start">
-              <div style="flex:1">
-                <p>La mia mamma è una persona molto importante per me. Ogni giorno si prende cura di me e fa tante cose per farmi stare bene. Mi prepara da mangiare, mi aiuta quando ho bisogno e mi chiede sempre come è andata la giornata.</p>
-                <p>Quando sono triste, lei cerca di farmi sorridere. Quando ho un problema, mi ascolta e mi dà un consiglio. Anche se a volte si stanca, trova sempre il tempo per me.</p>
-                <p>Mi vuole bene e io voglio tanto bene a lei. Per me la mia mamma è speciale perché c’è sempre, in ogni momento, e mi fa sentire amata.</p>
-                <div class="signature">Con affetto, il tuo/a bambino/a 💖</div>
-              </div>
-            </div>
-          </div>
+          <h1>Dediche per la mamma</h1>
+          <p class="lead">Parole sincere, disegnini e cuori per celebrare chi ci ama.</p>
         </div>
+      </header>
 
-        <div class="illustration" aria-hidden="true">
-          <!-- Disegno semplice: mamma e bambino abbracciati + cuori -->
-          <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop offset="0%" stop-color="#ff9aa2"/>
-                <stop offset="100%" stop-color="#ffb7b2"/>
-              </linearGradient>
-              <linearGradient id="g2" x1="0" x2="1">
-                <stop offset="0%" stop-color="#ffd3b6"/>
-                <stop offset="100%" stop-color="#ffb199"/>
-              </linearGradient>
-            </defs>
-            <!-- cuori fluttuanti -->
-            <g class="hearts" transform="translate(220,10)">
-              <path class="heart" d="M10 30 C 10 15, 40 15, 40 30 C 40 45, 25 55, 25 65 C25 55, 10 45, 10 30 Z" fill="url(#g1)" opacity="0.95"/>
-              <path class="heart" d="M40 50 C 40 35, 70 35, 70 50 C 70 65, 55 75, 55 85 C55 75, 40 65, 40 50 Z" fill="url(#g2)" opacity="0.9"/>
-              <path class="heart" d="M70 20 C 70 5, 100 5, 100 20 C 100 35, 85 45, 85 55 C85 45, 70 35, 70 20 Z" fill="#ff6b81" opacity="0.8"/>
-            </g>
+      <main class="grid" aria-live="polite">
+        <article class="card">
+          <svg class="heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ff6b81"/></svg>
+          <h3>Per la mamma dolce</h3>
+          <p>Grazie per i tuoi abbracci che mi scaldano come il sole. Sei il mio porto sicuro ogni giorno.</p>
+          <div class="small">— Con tanto amore <span class="emoji">💖</span></div>
+        </article>
 
-            <!-- silhouette mamma e bambino -->
-            <g transform="translate(40,40)">
-              <!-- mamma -->
-              <circle cx="120" cy="70" r="26" fill="#ffe6ea"/>
-              <path d="M100 120 C110 95,150 95,160 120 C160 170,80 170,100 120" fill="#ff9aa2" opacity="0.95"/>
-              <!-- bambino -->
-              <circle cx="70" cy="100" r="16" fill="#fff0d9"/>
-              <path d="M60 120 C65 110,95 110,100 120 C95 135,55 135,60 120" fill="#ffd3b6"/>
-              <!-- braccia che abbracciano (stilizzate) -->
-              <path d="M98 110 C90 115,80 120,70 115" stroke="#7a3740" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
-              <path d="M115 110 C125 115,135 120,140 115" stroke="#7a3740" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
-  </div>
-</body>
+        <article class="card">
+          <svg class="heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ffb199"/></svg>
+          <h3>Per la mamma forte</h3>
+          <p>Sei la mia ispirazione: con te ho imparato a ridere, a rialzarmi e a credere nei sogni.</p>
+          <div class="small">— Sempre tuo/a <span class="emoji">🌷</span></div>
+        </article>
+
+        <article class="card">
+          <svg class="heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ff9aa2"/></svg>
+          <h3>Per la mamma amica</h3>
+          <p>Grazie per i consigli, le risate e le confidenze. Sei il mio primo e più caro sostegno.</p>
+          <div class="small">— Con un bacio grande <span class="emoji">🥰</span></div>
+        </article>
+
+        <article class="card">
+          <svg class="heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s-7-4.8-9-8.2C-0.1 6.5 5.4 2 8.6 4.6 10 6 12 8 12 8s2-2 3.4-3.4C18.6 2 24.1 6.5 21 12.8 19 16.2 12 21 12 21z" fill="#ffd3b6"/></svg>
+          <h3>Per la mamma che ascolta</h3>
+          <p>Le tue parole hanno sempre un posto speciale nel mio cuore. Grazie per essere la mia confidente.</p>
+          <div class="small">— Ti voglio bene <span class="emoji">💐</span></div>
+        </article>
+      </main>
+
+      <footer>
+        Se vuoi aggiungere altre dediche, dimmi cosa scrivere e le aggiungo qui.
+      </footer>
+    </div>
+  </body>
 </html>
