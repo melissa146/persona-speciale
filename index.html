@@ -1,15 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-<title> Una persona speciale</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Una persona speciale</title>
+  <style>
+    :root{
+      --bg-1: #fff6f9;
+      --bg-2: #fff0f4;
+      --accent: #ff6b81;
+      --accent-2: #ffb199;
+      --card-bg: rgba(255,255,255,0.9);
+      --text: #333;
+    }
+    html,body{height:100%;margin:0;font-family: 'Segoe UI', Roboto, Arial, sans-serif;color:var(--text)}
+    body{
+      background: radial-gradient(circle at 10% 20%, var(--bg-2), var(--bg-1));
+      display:flex;align-items:center;justify-content:center;padding:3rem;
+    }
+    .container{max-width:900px;width:100%;}
+    .hero{
+      background: linear-gradient(135deg,var(--accent) 0%, #ffd2e0 50%, var(--accent-2) 100%);
+      border-radius:18px;padding:2rem;color:white;box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      position:relative;overflow:hidden;
+    }
+    h1{margin:0 0 .25rem;font-size:2.25rem;letter-spacing:0.5px}
+    h2{margin:0 0 1rem;font-weight:400;opacity:0.95}
+    .card{background:var(--card-bg);padding:1.5rem;border-radius:12px;margin-top:1rem;color:var(--text)}
+    p{line-height:1.6;margin:0}
+    .row{display:flex;gap:1.25rem;align-items:flex-start}
+    .illustration{flex:0 0 300px}
+    .hearts{position:absolute;right:-40px;top:-30px;opacity:0.85}
+    .heart{animation:float 4s ease-in-out infinite}
+    .heart:nth-child(2){animation-delay:0.8s;transform:scale(0.85)}
+    .heart:nth-child(3){animation-delay:1.6s;transform:scale(0.6)}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+    .signature{margin-top:1rem;text-align:right;font-weight:600;color:#7a3740}
+    @media(max-width:700px){.row{flex-direction:column}.illustration{order:-1;width:100%}}
+  </style>
+</head>
 <body>
-  <div class="card">
-<h1>Una persona speciale</h1>
-<p>La mia mamma è una persona molto importante per me. Ogni giorno si prende cura di me e fa tante cose per farmi stare bene. Mi prepara da mangiare, mi aiuta quando ho bisogno e mi chiede sempre come è andata la giornata.
+  <div class="container">
+    <section class="hero">
+      <div class="row">
+        <div>
+          <h1>Una persona speciale</h1>
+          <h2>Per la mia mamma, con tutto il mio amore</h2>
+          <div class="card">
+            <div style="display:flex;gap:1rem;align-items:flex-start">
+              <div style="flex:1">
+                <p>La mia mamma è una persona molto importante per me. Ogni giorno si prende cura di me e fa tante cose per farmi stare bene. Mi prepara da mangiare, mi aiuta quando ho bisogno e mi chiede sempre come è andata la giornata.</p>
+                <p>Quando sono triste, lei cerca di farmi sorridere. Quando ho un problema, mi ascolta e mi dà un consiglio. Anche se a volte si stanca, trova sempre il tempo per me.</p>
+                <p>Mi vuole bene e io voglio tanto bene a lei. Per me la mia mamma è speciale perché c’è sempre, in ogni momento, e mi fa sentire amata.</p>
+                <div class="signature">Con affetto, il tuo/a bambino/a 💖</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-Quando sono triste, lei cerca di farmi sorridere. Quando ho un problema, mi ascolta e mi dà un consiglio. Anche se a volte si stanca, trova sempre il tempo per me.
+        <div class="illustration" aria-hidden="true">
+          <!-- Disegno semplice: mamma e bambino abbracciati + cuori -->
+          <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0%" stop-color="#ff9aa2"/>
+                <stop offset="100%" stop-color="#ffb7b2"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" x2="1">
+                <stop offset="0%" stop-color="#ffd3b6"/>
+                <stop offset="100%" stop-color="#ffb199"/>
+              </linearGradient>
+            </defs>
+            <!-- cuori fluttuanti -->
+            <g class="hearts" transform="translate(220,10)">
+              <path class="heart" d="M10 30 C 10 15, 40 15, 40 30 C 40 45, 25 55, 25 65 C25 55, 10 45, 10 30 Z" fill="url(#g1)" opacity="0.95"/>
+              <path class="heart" d="M40 50 C 40 35, 70 35, 70 50 C 70 65, 55 75, 55 85 C55 75, 40 65, 40 50 Z" fill="url(#g2)" opacity="0.9"/>
+              <path class="heart" d="M70 20 C 70 5, 100 5, 100 20 C 100 35, 85 45, 85 55 C85 45, 70 35, 70 20 Z" fill="#ff6b81" opacity="0.8"/>
+            </g>
 
-Mi vuole bene e io voglio tanto bene a lei. Per me la mia mamma è speciale perché c’è sempre, in ogni momento, e mi fa sentire amata. 💕</p
-<div>
-<body>
-  <html/> 
+            <!-- silhouette mamma e bambino -->
+            <g transform="translate(40,40)">
+              <!-- mamma -->
+              <circle cx="120" cy="70" r="26" fill="#ffe6ea"/>
+              <path d="M100 120 C110 95,150 95,160 120 C160 170,80 170,100 120" fill="#ff9aa2" opacity="0.95"/>
+              <!-- bambino -->
+              <circle cx="70" cy="100" r="16" fill="#fff0d9"/>
+              <path d="M60 120 C65 110,95 110,100 120 C95 135,55 135,60 120" fill="#ffd3b6"/>
+              <!-- braccia che abbracciano (stilizzate) -->
+              <path d="M98 110 C90 115,80 120,70 115" stroke="#7a3740" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+              <path d="M115 110 C125 115,135 120,140 115" stroke="#7a3740" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
