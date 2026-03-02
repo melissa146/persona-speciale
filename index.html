@@ -15,7 +15,12 @@
       .controls{margin-left:auto}
       button{background:var(--accent);color:white;border:none;padding:0.5rem 0.9rem;border-radius:8px;cursor:pointer}
       .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1.25rem}
-      .card{background:var(--card);border-radius:12px;padding:1rem 1rem 1.25rem;box-shadow:0 6px 20px rgba(122,55,64,0.08);position:relative}
+      .card{background:var(--card);border-radius:12px;padding:1rem 1rem 1.25rem;box-shadow:0 6px 20px rgba(122,55,64,0.08);position:relative;opacity:0;animation:fadeIn 0.8s forwards;transition:transform 0.3s}
+      .card:hover{transform:translateY(-5px) scale(1.02)}
+      @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+      .card.photo img{width:100%;border-radius:8px;display:block;margin-bottom:0.75rem;transition:transform 0.3s}
+      .card.photo img:hover{transform:scale(1.05)}
+      .gallery h2{margin-top:2rem;color:var(--accent);font-size:1.5rem}
       .card h3{margin:0 0 .5rem;color:#7a3740}
       .card p{margin:0 0 .75rem;line-height:1.5}
       .heart-ico{position:absolute;right:12px;top:12px;width:42px;height:42px;opacity:0.95}
@@ -42,6 +47,24 @@
           <button onclick="window.print()">Stampa</button>
         </div>
       </header>
+
+      <!-- Galleria di foto dedicate alla mamma -->
+      <section class="gallery">
+        <h2>Foto della mamma</h2>
+        <div class="grid">
+          <article class="card photo" role="article">
+            <img src="foto-mamma-1.jpg" alt="Mamma sorridente" />
+            <h3>Momento speciale 1</h3>
+            <p>Una foto che cattura il suo sorriso radioso.</p>
+          </article>
+          <article class="card photo" role="article">
+            <img src="foto-mamma-2.jpg" alt="Mamma abbraccia il bambino" />
+            <h3>Momento speciale 2</h3>
+            <p>Un abbraccio che riscalda il cuore.</p>
+          </article>
+          <!-- Aggiungi altre foto qui sostituendo i percorsi e le descrizioni -->
+        </div>
+      </section>
 
       <main class="grid" aria-live="polite">
         <article class="card" role="article">
