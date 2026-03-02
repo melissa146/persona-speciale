@@ -21,6 +21,9 @@
       .card.photo img{width:100%;border-radius:8px;display:block;margin-bottom:0.75rem;transition:transform 0.3s}
       .card.photo img:hover{transform:scale(1.05)}
       .gallery h2{margin-top:2rem;color:var(--accent);font-size:1.5rem}
+      /* cuore a comparsa */
+      .heart-anim{position:fixed;bottom:0;left:50%;pointer-events:none;font-size:1.5rem;opacity:0;animation:floatUp 2.5s ease-out forwards}
+      @keyframes floatUp{0%{transform:translateX(-50%) translateY(0) scale(1);opacity:1}100%{transform:translateX(-50%) translateY(-250px) scale(1.5);opacity:0}}
       .card h3{margin:0 0 .5rem;color:#7a3740}
       .card p{margin:0 0 .75rem;line-height:1.5}
       .heart-ico{position:absolute;right:12px;top:12px;width:42px;height:42px;opacity:0.95}
@@ -62,6 +65,16 @@
             <h3>Momento speciale 2</h3>
             <p>Un abbraccio che riscalda il cuore.</p>
           </article>
+          <article class="card photo" role="article">
+            <img src="foto-mamma-figlia-1.jpg" alt="Mamma e figlia che si tengono per mano" />
+            <h3>Insieme sempre</h3>
+            <p>Una passeggiata mano nella mano al tramonto.</p>
+          </article>
+          <article class="card photo" role="article">
+            <img src="foto-mamma-figlia-2.jpg" alt="Mamma che legge con la figlia" />
+            <h3>Storie condivise</h3>
+            <p>Un momento di lettura e complicità.</p>
+          </article>
           <!-- Aggiungi altre foto qui sostituendo i percorsi e le descrizioni -->
         </div>
       </section>
@@ -100,5 +113,18 @@
         Se vuoi aggiungere altre dediche, dimmi cosa scrivere e le inserirò qui.
       </footer>
     </div>
+    <script>
+      // genera cuori animati in basso al centro
+      function createHeart(){
+        const heart = document.createElement('div');
+        heart.className = 'heart-anim';
+        heart.textContent = '❤️';
+        document.body.appendChild(heart);
+        // rimuovi dopo animazione
+        setTimeout(() => heart.remove(), 2600);
+      }
+      // crea un cuore ogni 800ms
+      setInterval(createHeart, 800);
+    </script>
   </body>
 </html>
